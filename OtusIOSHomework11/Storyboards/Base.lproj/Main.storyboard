@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--News View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="NewsViewController" customModule="OtusIOSHomework11" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2lY-ji-RFB">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsTableViewCell" rowHeight="100" id="u4b-dD-KME" customClass="NewsTableViewCell" customModule="OtusIOSHomework11" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u4b-dD-KME" id="Smb-Z2-B3T">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5lM-o8-1or">
+                                                    <rect key="frame" x="306" y="10" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="aik-9r-aYh"/>
+                                                        <constraint firstAttribute="height" constant="80" id="uE3-lt-vAb"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Kt0-O2-bu5">
+                                                    <rect key="frame" x="28" y="19" width="270" height="62"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ak-Qz-LzN">
+                                                            <rect key="frame" x="0.0" y="0.0" width="270" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Slz-Ni-GtX">
+                                                            <rect key="frame" x="0.0" y="48.5" width="270" height="13.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="11"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Kt0-O2-bu5" firstAttribute="leading" secondItem="Smb-Z2-B3T" secondAttribute="leadingMargin" constant="8" id="8ED-jm-cGv"/>
+                                                <constraint firstItem="Kt0-O2-bu5" firstAttribute="centerY" secondItem="Smb-Z2-B3T" secondAttribute="centerY" id="Nab-bW-4Qg"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Kt0-O2-bu5" secondAttribute="bottom" constant="8" id="UmN-HF-F7v"/>
+                                                <constraint firstItem="Kt0-O2-bu5" firstAttribute="top" secondItem="Smb-Z2-B3T" secondAttribute="topMargin" constant="8" id="X0A-a7-B7M"/>
+                                                <constraint firstItem="5lM-o8-1or" firstAttribute="leading" secondItem="Kt0-O2-bu5" secondAttribute="trailing" constant="8" id="lSB-cy-L7Y"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="5lM-o8-1or" secondAttribute="trailing" constant="8" id="usM-8H-dI8"/>
+                                                <constraint firstItem="5lM-o8-1or" firstAttribute="centerY" secondItem="Smb-Z2-B3T" secondAttribute="centerY" id="yCh-Tn-NLX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorLabel" destination="6ak-Qz-LzN" id="e76-fX-jA1"/>
+                                            <outlet property="infoLabel" destination="Slz-Ni-GtX" id="D5H-ev-GdZ"/>
+                                            <outlet property="newsImage" destination="5lM-o8-1or" id="gst-a3-wrP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="qoL-Y6-qES"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="lOg-fr-sDL"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2lY-ji-RFB" secondAttribute="trailing" id="8j8-oB-0gc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2lY-ji-RFB" secondAttribute="bottom" id="Klp-4m-y8b"/>
+                            <constraint firstItem="2lY-ji-RFB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P6o-lJ-t5a"/>
+                            <constraint firstItem="2lY-ji-RFB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="l7q-w1-RdO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="newsTableView" destination="2lY-ji-RFB" id="2J8-MO-m7x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="485.50724637681162" y="71.651785714285708"/>
+        </scene>
+    </scenes>
+</document>

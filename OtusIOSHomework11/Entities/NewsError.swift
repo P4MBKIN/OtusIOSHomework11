@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct ArticleError: Decodable {
+struct NewsError: Decodable {
+    
     let status: String?
     let code: String?
     let message: String?
@@ -24,5 +25,17 @@ struct ArticleError: Decodable {
         status = try container.decode(String?.self, forKey: .status)
         code = try container.decode(String?.self, forKey: .code)
         message = try container.decode(String?.self, forKey: .message)
+    }
+}
+
+extension NewsError: CustomStringConvertible {
+    
+    var description: String {
+        return  """
+                News Error!!!
+                Status: \(status ?? "")
+                Code: \(code ?? "")
+                Message: \(message ?? "")
+                """
     }
 }

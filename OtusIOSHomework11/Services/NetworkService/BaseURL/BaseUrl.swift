@@ -9,6 +9,7 @@
 import Foundation
 
 struct BaseUrl {
+    
     let scheme: BaseUrlScheme
     let host: BaseUrlHost
     let path: BaseUrlPath?
@@ -16,17 +17,17 @@ struct BaseUrl {
     var urlComponents = URLComponents()
     
     mutating func urlConfigList() -> URL {
-        urlComponents.scheme = self.scheme.rawValue
-        urlComponents.host = self.host.rawValue
-        urlComponents.path = self.path?.rawValue ?? ""
-        urlComponents.setQueryItems(with: queryParams)
-        guard let url = urlComponents.url else { fatalError("Could not create URL from components")}
+        self.urlComponents.scheme = self.scheme.rawValue
+        self.urlComponents.host = self.host.rawValue
+        self.urlComponents.path = self.path?.rawValue ?? ""
+        self.urlComponents.setQueryItems(with: self.queryParams)
+        guard let url = self.urlComponents.url else { fatalError("Could not create URL from components") }
         return url
     }
 }
 
 extension URLComponents {
     mutating func setQueryItems(with parameters: [String: String]) {
-        self.queryItems = parameters.map{ URLQueryItem(name: $0.key, value: $0.value)}
+        self.queryItems = parameters.map{ URLQueryItem(name: $0.key, value: $0.value) }
     }
 }

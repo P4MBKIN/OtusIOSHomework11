@@ -9,6 +9,5 @@
 import Foundation
 
 enum BaseMethod: String {
-    
     case everything = "GET"
 }

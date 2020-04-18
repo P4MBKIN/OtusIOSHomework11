@@ -8,10 +8,11 @@
 
 import Foundation
 
-struct ArticleList: Decodable {
+struct NewsList: Decodable {
+    
     let status: String?
     let totalResults: Int?
-    let articles: [Article]?
+    let list: [News]?
     
     enum CodingKeys: String, CodingKey {
         case status
@@ -23,7 +24,7 @@ struct ArticleList: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         status = try container.decode(String?.self, forKey: .status)
         totalResults = try container.decode(Int?.self, forKey: .totalResults)
-        articles = try container.decode([Article]?.self, forKey: .articles)
+        list = try container.decode([News]?.self, forKey: .articles)
     }
 }
 
@@ -44,11 +45,13 @@ struct Source: Decodable {
     }
 }
 
-struct Article: Decodable {
+struct News: Decodable {
+    
     let source: Source?
     let author: String?
     let title: String?
     let info: String?
+    let imageUrl: String?
     let date: Date?
     
     enum CodingKeys: String, CodingKey {
@@ -56,7 +59,17 @@ struct Article: Decodable {
         case author
         case title
         case description
+        case urlToImage
         case publishedAt
+    }
+    
+    init(source: Source?, author: String?, title: String?, info: String?, imageUrl: String?, date: Date?) {
+        self.source = source
+        self.author = author
+        self.title = title
+        self.info = info
+        self.imageUrl = imageUrl
+        self.date = date
     }
 
     init(from decoder: Decoder) throws {
@@ -65,6 +78,7 @@ struct Article: Decodable {
         author = try container.decode(String?.self, forKey: .author)
         title = try container.decode(String?.self, forKey: .title)
         info = try container.decode(String?.self, forKey: .description)
+        imageUrl = try container.decode(String?.self, forKey: .urlToImage)
         
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
