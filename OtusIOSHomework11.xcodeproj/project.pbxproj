@@ -44,6 +44,9 @@
 		E9E494AE24492E0D00EAD6C2 /* BaseOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E494AD24492E0C00EAD6C2 /* BaseOptions.swift */; };
 		E9E494B024492E3000EAD6C2 /* BaseOptionsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E494AF24492E3000EAD6C2 /* BaseOptionsProtocols.swift */; };
 		E9E494B42449577000EAD6C2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E494B32449577000EAD6C2 /* Helpers.swift */; };
+		E9E494C4244AC5A500EAD6C2 /* NewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E494C3244AC5A500EAD6C2 /* NewsRouter.swift */; };
+		E9E494DE244B0D5E00EAD6C2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E9E494DD244B0D5E00EAD6C2 /* RxSwift */; };
+		E9E494E0244B0D5E00EAD6C2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E9E494DF244B0D5E00EAD6C2 /* RxCocoa */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +87,7 @@
 		E9E494AD24492E0C00EAD6C2 /* BaseOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOptions.swift; sourceTree = "<group>"; };
 		E9E494AF24492E3000EAD6C2 /* BaseOptionsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOptionsProtocols.swift; sourceTree = "<group>"; };
 		E9E494B32449577000EAD6C2 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		E9E494C3244AC5A500EAD6C2 /* NewsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +95,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9E494DE244B0D5E00EAD6C2 /* RxSwift in Frameworks */,
 				E9E4949D24490E7A00EAD6C2 /* RealmSwift in Frameworks */,
+				E9E494E0244B0D5E00EAD6C2 /* RxCocoa in Frameworks */,
 				E9E494992448140700EAD6C2 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,7 +130,6 @@
 				E9E494822447A58400EAD6C2 /* Modules */,
 				E969A2742438681800ADED5B /* Services */,
 				E9E494862447A6D900EAD6C2 /* Storyboards */,
-				E9E4948D2447C49400EAD6C2 /* Utils */,
 				E969A2692438655600ADED5B /* Assets.xcassets */,
 				E969A26E2438655600ADED5B /* Info.plist */,
 			);
@@ -149,6 +154,7 @@
 				E969A27624386AEB00ADED5B /* BaseURL */,
 				E9E49471244632DA00EAD6C2 /* BaseParams */,
 				E9E4941B24431DC000EAD6C2 /* NetStatus */,
+				E9E4948D2447C49400EAD6C2 /* Utils */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -216,6 +222,7 @@
 				E9E494872447A7D400EAD6C2 /* NewsViewController.swift */,
 				E9E494902447DBB500EAD6C2 /* NewsPresenter.swift */,
 				E9E494922447E2A600EAD6C2 /* NewsInteractor.swift */,
+				E9E494C3244AC5A500EAD6C2 /* NewsRouter.swift */,
 				E9E494892447A81C00EAD6C2 /* NewsConfigurator.swift */,
 				E9E494842447A6B400EAD6C2 /* NewsProtocols.swift */,
 				E9E4949524480B9700EAD6C2 /* NewsTableViewCell.swift */,
@@ -297,6 +304,8 @@
 			packageProductDependencies = (
 				E9E494982448140700EAD6C2 /* Kingfisher */,
 				E9E4949C24490E7A00EAD6C2 /* RealmSwift */,
+				E9E494DD244B0D5E00EAD6C2 /* RxSwift */,
+				E9E494DF244B0D5E00EAD6C2 /* RxCocoa */,
 			);
 			productName = OtusIOSHomework11;
 			productReference = E969A25D2438654C00ADED5B /* OtusIOSHomework11.app */;
@@ -329,6 +338,7 @@
 			packageReferences = (
 				E9E494972448140700EAD6C2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				E9E4949B24490E7A00EAD6C2 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				E9E494DC244B0D5E00EAD6C2 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = E969A25E2438654C00ADED5B /* Products */;
 			projectDirPath = "";
@@ -379,6 +389,7 @@
 				E9E494752446354400EAD6C2 /* BaseParams.swift in Sources */,
 				E9E494882447A7D400EAD6C2 /* NewsViewController.swift in Sources */,
 				E9E49477244641E300EAD6C2 /* BaseMethod.swift in Sources */,
+				E9E494C4244AC5A500EAD6C2 /* NewsRouter.swift in Sources */,
 				E9E494702446299000EAD6C2 /* BaseRequest.swift in Sources */,
 				E9E494B024492E3000EAD6C2 /* BaseOptionsProtocols.swift in Sources */,
 				E9E494A1244911A500EAD6C2 /* DataServiceProtocol.swift in Sources */,
@@ -602,6 +613,14 @@
 				minimumVersion = 4.4.0;
 			};
 		};
+		E9E494DC244B0D5E00EAD6C2 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -614,6 +633,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E9E4949B24490E7A00EAD6C2 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		E9E494DD244B0D5E00EAD6C2 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9E494DC244B0D5E00EAD6C2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		E9E494DF244B0D5E00EAD6C2 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9E494DC244B0D5E00EAD6C2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

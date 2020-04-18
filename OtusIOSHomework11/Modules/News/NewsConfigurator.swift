@@ -8,15 +8,12 @@
 
 import Foundation
 
-class NewsConfigurator: NewsConfiguratorProtocol {
+final class NewsConfigurator: NewsConfiguratorProtocol {
     
     func configure(with viewController: NewsViewController) {
-        let presenter: NewsPresenterProtocol & NewsInteractorToPresenterProtocol = NewsPresenter(view: viewController)
-        let interactor: NewsInteractorProtocol = NewsInteractor(presenter: presenter)
-        let router: NewsRouterProtocol? = nil
-        
+        let router: NewsRouterProtocol = NewsRouter()
+        let interactor: NewsInteractorProtocol = NewsInteractor()
+        let presenter: NewsPresenterProtocol = NewsPresenter(dependencies: (interactor: interactor, router: router))
         viewController.presenter = presenter
-        presenter.interactor = interactor
-        presenter.router = router
     }
 }

@@ -6,39 +6,44 @@
 //  Copyright © 2020 OtusCourse. All rights reserved.
 //
 
+import RxSwift
+import RxCocoa
 import Foundation
 
-class NewsPresenter: NewsPresenterProtocol {
+final class NewsPresenter: NewsPresenterProtocol, NewsPresenterInputsProtocol, NewsPresenterOutputsProtocol {
     
-    weak var view: NewsViewProtocol?
-    var interactor: NewsInteractorProtocol?
-    var router: NewsRouterProtocol?
+    var interactor: NewsInteractorProtocol!
+    var router: NewsRouterProtocol!
     
-    required init(view: NewsViewProtocol) {
-        self.view = view
-    }
+    var inputs: NewsPresenterInputsProtocol { return self }
+    var outputs: NewsPresenterOutputsProtocol { return self }
     
-    func configurateView() {
-        self.interactor?.fetchInitialNews()
-    }
+    /// Inputs
+    let viewDidLoadTrigger = PublishSubject<Void>()
+    let refreshControlTrigger = PublishSubject<Void>()
     
-    func refreshControlValueChanged() {
+    /// Outputs
+    let newsList = BehaviorRelay<[News]>(value: [])
+    let error = PublishSubject<Error>()
+    
+    private let disposeBag = DisposeBag()
+    
+    required init(dependencies: NewsPresenterDependencies) {
+        self.interactor = dependencies.interactor
+        self.router = dependencies.router
         
-    }
-}
-
-// MARK: - News Interator To Presenter Protocol methods
-extension NewsPresenter: NewsInteractorToPresenterProtocol {
-    
-    func newsFetched(newsList: [News]) {
-        self.view?.updateNews(with: newsList)
-    }
-    
-    func newsFetchedFailed(error: String) {
-        self.view?.displayError(error: error)
-    }
-    
-    func newsDataFailed(error: String) {
-        self.view?.displayError(error: error)
+        /// Inputs setup
+        self.refreshControlTrigger.asObserver()
+            .bind(to: self.interactor.inputs.searchNewsTrigger)
+            .disposed(by: disposeBag)
+        
+        /// Outputs setup
+        self.interactor.outputs.searchNewsResponse
+            .subscribe(onNext: { [weak self] newsList in
+                self?.newsList.accept(newsList)
+            }, onError: { [weak self] newsError in
+                self?.error.onNext(newsError)
+            })
+        .disposed(by: disposeBag)
     }
 }

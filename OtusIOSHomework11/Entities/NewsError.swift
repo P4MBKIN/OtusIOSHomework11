@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct NewsError: Decodable {
+struct NewsError: Decodable, Error {
     
     let status: String?
     let code: String?
@@ -38,4 +38,9 @@ extension NewsError: CustomStringConvertible {
                 Message: \(message ?? "")
                 """
     }
+}
+
+extension NewsError: LocalizedError {
+    
+    var errorDescription: String? { return self.description }
 }

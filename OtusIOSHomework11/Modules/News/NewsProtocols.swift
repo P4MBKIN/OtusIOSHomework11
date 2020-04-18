@@ -6,37 +6,51 @@
 //  Copyright © 2020 OtusCourse. All rights reserved.
 //
 
+import RxSwift
+import RxCocoa
 import Foundation
 
-/// PRESENTER -> VIEW
 protocol NewsViewProtocol: class {
-    var presenter: NewsPresenterProtocol? { get set }
-    func resetNews()
-    func updateNews(with newsList: [News])
-    func displayError(error: String)
+    var presenter: NewsPresenterProtocol! { get set }
 }
 
 /// VIEW -> PRESENTER
+protocol NewsPresenterInputsProtocol: class {
+    var viewDidLoadTrigger: PublishSubject<Void> { get }
+    var refreshControlTrigger: PublishSubject<Void> { get }
+}
+
+/// PRESENTER -> VIEW
+protocol NewsPresenterOutputsProtocol: class {
+    var newsList: BehaviorRelay<[News]> { get }
+    var error: PublishSubject<Error> { get }
+}
+
+typealias NewsPresenterDependencies = (
+    interactor: NewsInteractorProtocol,
+    router: NewsRouterProtocol
+)
+
 protocol NewsPresenterProtocol: class {
-    var view: NewsViewProtocol? { get set }
-    var interactor: NewsInteractorProtocol? { get set }
-    var router: NewsRouterProtocol? { get set }
-    func configurateView()
-    func refreshControlValueChanged()
+    var interactor: NewsInteractorProtocol! { get set }
+    var router: NewsRouterProtocol! { get set }
+    var inputs: NewsPresenterInputsProtocol { get }
+    var outputs: NewsPresenterOutputsProtocol { get }
 }
 
 /// PRESENTER -> INTERACTOR
-protocol NewsInteractorProtocol: class {
-    var presenter: NewsInteractorToPresenterProtocol? { get set }
-    func fetchInitialNews()
-    func updateNews()
+protocol NewsInteractorInputsProtocol: class {
+    var searchNewsTrigger: PublishSubject<Void> { get }
 }
 
 /// INTERACTOR -> PRESENTER
-protocol NewsInteractorToPresenterProtocol: class {
-    func newsFetched(newsList: [News])
-    func newsFetchedFailed(error: String)
-    func newsDataFailed(error: String)
+protocol NewsInteractorOutputsProtocol: class {
+    var searchNewsResponse: PublishSubject<[News]> { get }
+}
+
+protocol NewsInteractorProtocol: class {
+    var inputs: NewsInteractorInputsProtocol { get }
+    var outputs: NewsInteractorOutputsProtocol { get }
 }
 
 protocol NewsRouterProtocol: class {
