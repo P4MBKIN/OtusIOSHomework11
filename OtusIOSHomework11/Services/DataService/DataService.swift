@@ -10,25 +10,28 @@ import Foundation
 
 class DataService: DataServiceProtocol {
     
-    func getNewsData(filter: String?) -> ([NewsData]?, Error?) {
-        guard let options = try? BaseOptions<NewsModel>() else { return (nil, DataError.initializationRealmError) }
+    func getNewsData(filter: String?, sortedByKeyPath: String?, ascending: Bool?) -> ([NewsData]?, Error?) {
+        let options = BaseOptions<NewsModel>()
         
-        let data = options.get(filter: filter)
-        let newsData = data.map{ (author: $0.author, title: $0.title, info: $0.info, imageUrl: $0.imageUrl, date: $0.date) }
+        let (data, error) = options.get(filter: filter, sortedByKeyPath: sortedByKeyPath, ascending: ascending)
+        if error != nil { return (nil, error!) }
+        guard let list = data else { return (nil, nil) }
+        let newsData = list.map{ (author: $0.author, title: $0.title, info: $0.info, imageUrl: $0.imageUrl, date: $0.date) }
         
         return (newsData, nil)
     }
     
     func deleteNewsData(filter: String?) -> Error? {
-        guard let options = try? BaseOptions<NewsModel>() else { return DataError.initializationRealmError }
+        let options = BaseOptions<NewsModel>()
         
         return options.delete(filter: filter)
     }
     
     func putNewsData(listNewsData: [NewsData]) -> Error? {
-        guard let options = try? BaseOptions<NewsModel>() else { return DataError.initializationRealmError }
+        let options = BaseOptions<NewsModel>()
         
         let data = listNewsData.map{ NewsModel(author: $0.author, title: $0.title, info: $0.info, imageUrl: $0.imageUrl, date: $0.date) }
+        
         return options.put(objects: data)
     }
     

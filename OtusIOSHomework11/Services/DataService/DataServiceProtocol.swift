@@ -10,7 +10,7 @@ import Foundation
 
 protocol DataServiceProtocol: class {
     typealias NewsData = (author: String?, title: String?, info: String?, imageUrl: String?, date: Date?)
-    func getNewsData(filter: String?) -> ([NewsData]?, Error?)
+    func getNewsData(filter: String?, sortedByKeyPath: String?, ascending: Bool?) -> ([NewsData]?, Error?)
     func deleteNewsData(filter: String?) -> Error?
     func putNewsData(listNewsData: [NewsData]) -> Error?
 }

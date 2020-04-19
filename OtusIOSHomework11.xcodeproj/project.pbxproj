@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E946A0FA244BB71600A3F07C /* Action in Frameworks */ = {isa = PBXBuildFile; productRef = E946A0F9244BB71600A3F07C /* Action */; };
+		E946A0FC244BC82400A3F07C /* NewsSearchParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946A0FB244BC82400A3F07C /* NewsSearchParams.swift */; };
 		E969A2612438654C00ADED5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E969A2602438654C00ADED5B /* AppDelegate.swift */; };
 		E969A2632438654C00ADED5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E969A2622438654C00ADED5B /* SceneDelegate.swift */; };
 		E969A2682438654C00ADED5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E969A2662438654C00ADED5B /* Main.storyboard */; };
@@ -40,16 +42,15 @@
 		E9E4949F2449119400EAD6C2 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E4949E2449119400EAD6C2 /* DataService.swift */; };
 		E9E494A1244911A500EAD6C2 /* DataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E494A0244911A500EAD6C2 /* DataServiceProtocol.swift */; };
 		E9E494A42449121100EAD6C2 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E494A32449121100EAD6C2 /* NewsModel.swift */; };
-		E9E494AA2449263C00EAD6C2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E494A92449263C00EAD6C2 /* Extensions.swift */; };
 		E9E494AE24492E0D00EAD6C2 /* BaseOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E494AD24492E0C00EAD6C2 /* BaseOptions.swift */; };
 		E9E494B024492E3000EAD6C2 /* BaseOptionsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E494AF24492E3000EAD6C2 /* BaseOptionsProtocols.swift */; };
-		E9E494B42449577000EAD6C2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E494B32449577000EAD6C2 /* Helpers.swift */; };
 		E9E494C4244AC5A500EAD6C2 /* NewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E494C3244AC5A500EAD6C2 /* NewsRouter.swift */; };
 		E9E494DE244B0D5E00EAD6C2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E9E494DD244B0D5E00EAD6C2 /* RxSwift */; };
 		E9E494E0244B0D5E00EAD6C2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E9E494DF244B0D5E00EAD6C2 /* RxCocoa */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E946A0FB244BC82400A3F07C /* NewsSearchParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSearchParams.swift; sourceTree = "<group>"; };
 		E969A25D2438654C00ADED5B /* OtusIOSHomework11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OtusIOSHomework11.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E969A2602438654C00ADED5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E969A2622438654C00ADED5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,10 +84,8 @@
 		E9E4949E2449119400EAD6C2 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		E9E494A0244911A500EAD6C2 /* DataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceProtocol.swift; sourceTree = "<group>"; };
 		E9E494A32449121100EAD6C2 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
-		E9E494A92449263C00EAD6C2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E9E494AD24492E0C00EAD6C2 /* BaseOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOptions.swift; sourceTree = "<group>"; };
 		E9E494AF24492E3000EAD6C2 /* BaseOptionsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOptionsProtocols.swift; sourceTree = "<group>"; };
-		E9E494B32449577000EAD6C2 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		E9E494C3244AC5A500EAD6C2 /* NewsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E946A0FA244BB71600A3F07C /* Action in Frameworks */,
 				E9E494DE244B0D5E00EAD6C2 /* RxSwift in Frameworks */,
 				E9E4949D24490E7A00EAD6C2 /* RealmSwift in Frameworks */,
 				E9E494E0244B0D5E00EAD6C2 /* RxCocoa in Frameworks */,
@@ -194,6 +194,7 @@
 			children = (
 				E9E4942C2443517A00EAD6C2 /* NewsList.swift */,
 				E9E4947824465EB900EAD6C2 /* NewsError.swift */,
+				E946A0FB244BC82400A3F07C /* NewsSearchParams.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -254,7 +255,6 @@
 				E9E4949E2449119400EAD6C2 /* DataService.swift */,
 				E9E494A52449222D00EAD6C2 /* BaseOptions */,
 				E9E494A2244911AD00EAD6C2 /* Models */,
-				E9E494A82449260C00EAD6C2 /* Utils */,
 			);
 			path = DataService;
 			sourceTree = "<group>";
@@ -274,15 +274,6 @@
 				E9E494AD24492E0C00EAD6C2 /* BaseOptions.swift */,
 			);
 			path = BaseOptions;
-			sourceTree = "<group>";
-		};
-		E9E494A82449260C00EAD6C2 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				E9E494A92449263C00EAD6C2 /* Extensions.swift */,
-				E9E494B32449577000EAD6C2 /* Helpers.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +297,7 @@
 				E9E4949C24490E7A00EAD6C2 /* RealmSwift */,
 				E9E494DD244B0D5E00EAD6C2 /* RxSwift */,
 				E9E494DF244B0D5E00EAD6C2 /* RxCocoa */,
+				E946A0F9244BB71600A3F07C /* Action */,
 			);
 			productName = OtusIOSHomework11;
 			productReference = E969A25D2438654C00ADED5B /* OtusIOSHomework11.app */;
@@ -339,6 +331,7 @@
 				E9E494972448140700EAD6C2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				E9E4949B24490E7A00EAD6C2 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				E9E494DC244B0D5E00EAD6C2 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				E946A0F8244BB71600A3F07C /* XCRemoteSwiftPackageReference "Action" */,
 			);
 			productRefGroup = E969A25E2438654C00ADED5B /* Products */;
 			projectDirPath = "";
@@ -379,6 +372,7 @@
 				E9E4941F244321A500EAD6C2 /* BaseUrlHost.swift in Sources */,
 				E9E494932447E2A600EAD6C2 /* NewsInteractor.swift in Sources */,
 				E9E4941D24431E5F00EAD6C2 /* NetStatus.swift in Sources */,
+				E946A0FC244BC82400A3F07C /* NewsSearchParams.swift in Sources */,
 				E9E4942624432C9600EAD6C2 /* BaseDownload.swift in Sources */,
 				E969A2612438654C00ADED5B /* AppDelegate.swift in Sources */,
 				E969A27824386B0900ADED5B /* BaseUrl.swift in Sources */,
@@ -394,8 +388,6 @@
 				E9E494B024492E3000EAD6C2 /* BaseOptionsProtocols.swift in Sources */,
 				E9E494A1244911A500EAD6C2 /* DataServiceProtocol.swift in Sources */,
 				E969A2632438654C00ADED5B /* SceneDelegate.swift in Sources */,
-				E9E494AA2449263C00EAD6C2 /* Extensions.swift in Sources */,
-				E9E494B42449577000EAD6C2 /* Helpers.swift in Sources */,
 				E9E4947C2446707300EAD6C2 /* NetworkServiceProtocol.swift in Sources */,
 				E9E4948F2447C4BA00EAD6C2 /* JsonUtils.swift in Sources */,
 				E9E494232443228A00EAD6C2 /* BaseUrlPath.swift in Sources */,
@@ -597,6 +589,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E946A0F8244BB71600A3F07C /* XCRemoteSwiftPackageReference "Action" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/Action";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
 		E9E494972448140700EAD6C2 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -624,6 +624,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E946A0F9244BB71600A3F07C /* Action */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E946A0F8244BB71600A3F07C /* XCRemoteSwiftPackageReference "Action" */;
+			productName = Action;
+		};
 		E9E494982448140700EAD6C2 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E9E494972448140700EAD6C2 /* XCRemoteSwiftPackageReference "Kingfisher" */;

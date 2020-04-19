@@ -33,7 +33,7 @@ final class NewsViewController: UIViewController, NewsViewProtocol {
         
         // News received
         self.presenter.outputs.newsList.asObservable()
-            .filter{ !$0.isEmpty }
+            //.filter{ !$0.isEmpty }
             .observeOn(MainScheduler.asyncInstance)
             .subscribe(onNext: { [weak self] _ in
                 self?.newsTableView.reloadData()
@@ -73,6 +73,10 @@ extension NewsViewController: UITableViewDataSource {
         guard let newsCell = cell else { return UITableViewCell() }
         newsCell.set(news: self.presenter.outputs.newsList.value[indexPath.row])
         return newsCell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Pull to refresh"
     }
 }
 

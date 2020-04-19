@@ -11,6 +11,7 @@ import Foundation
 
 class NewsModel: Object {
     
+    @objc dynamic var id = UUID().uuidString
     @objc dynamic var author: String?
     @objc dynamic var title: String?
     @objc dynamic var info: String?
@@ -25,4 +26,6 @@ class NewsModel: Object {
         self.imageUrl = imageUrl
         self.date = date
     }
+    
+    override class func primaryKey() -> String? { return "id" }
 }

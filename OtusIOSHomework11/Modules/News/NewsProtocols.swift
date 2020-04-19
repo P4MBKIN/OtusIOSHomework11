@@ -40,7 +40,8 @@ protocol NewsPresenterProtocol: class {
 
 /// PRESENTER -> INTERACTOR
 protocol NewsInteractorInputsProtocol: class {
-    var searchNewsTrigger: PublishSubject<Void> { get }
+    var dataBaseNewsTrigger: PublishSubject<Void> { get }
+    var searchNewsTrigger: PublishSubject<NewsSearchParams> { get }
 }
 
 /// INTERACTOR -> PRESENTER

@@ -26,23 +26,31 @@ final class NewsPresenter: NewsPresenterProtocol, NewsPresenterInputsProtocol, N
     let newsList = BehaviorRelay<[News]>(value: [])
     let error = PublishSubject<Error>()
     
+    private var searchNewsParams: NewsSearchParams
     private let disposeBag = DisposeBag()
     
     required init(dependencies: NewsPresenterDependencies) {
         self.interactor = dependencies.interactor
         self.router = dependencies.router
         
+        self.searchNewsParams = NewsSearchParams(topic: "bitcoin", page: 1)
+        
         /// Inputs setup
+        self.viewDidLoadTrigger.asObserver()
+            .bind(to: self.interactor.inputs.dataBaseNewsTrigger)
+            .disposed(by: disposeBag)
+        
         self.refreshControlTrigger.asObserver()
+            .withLatestFrom(Observable.just(self.searchNewsParams))
             .bind(to: self.interactor.inputs.searchNewsTrigger)
             .disposed(by: disposeBag)
         
         /// Outputs setup
         self.interactor.outputs.searchNewsResponse
-            .subscribe(onNext: { [weak self] newsList in
-                self?.newsList.accept(newsList)
-            }, onError: { [weak self] newsError in
-                self?.error.onNext(newsError)
+            .subscribe(onNext: { [weak self] list in
+                self?.newsList.accept(list)
+            }, onError: { [weak self] e in
+                self?.error.onNext(e)
             })
         .disposed(by: disposeBag)
     }

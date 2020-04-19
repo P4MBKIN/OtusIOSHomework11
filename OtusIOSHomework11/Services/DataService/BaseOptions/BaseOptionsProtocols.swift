@@ -11,7 +11,7 @@ import Foundation
 
 protocol BaseGetProtocol {
     associatedtype TG: Object
-    func get(filter: String?) -> [TG]
+    func get(filter: String?, sortedByKeyPath: String?, ascending: Bool?) -> ([TG]?, Error?)
 }
 
 protocol BaseDeleteProtocol {
